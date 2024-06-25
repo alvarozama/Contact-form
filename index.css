@@ -26,6 +26,7 @@ main {
     padding: 10px 20px 40px 20px;
     display: flex;
     flex-direction: column;
+    height: auto;
 }
 
 h1 {
@@ -38,6 +39,19 @@ h1 {
 fieldset {
     border: none;
     padding: 0;
+}
+
+.names {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.first-name,
+.last-name {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .user-info {
@@ -187,3 +201,75 @@ footer { margin-top: 20px; }
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
+
+/* xs */ 
+/* @media (min-width: 475px) {} */ 
+/* sm */ 
+/* @media (min-width: 640px) {} */ 
+/* md */ 
+/* @media (min-width: 768px) {} */ 
+
+/* lg */ 
+@media (min-width: 1024px) {
+    main {
+        width: 735px;
+        height: auto;
+        max-width: 900px;
+        max-height: 800px;
+        padding: 30px;
+        /* overflow-y: auto; */
+    }
+
+    h1 {
+        margin: 15px 0;
+    }
+
+    .names {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .first-name {
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .last-name {
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .container label {
+        width: 44%;
+    }
+
+    .message {
+        height: 92px;
+    }
+
+    .consent{
+        margin-top: 60px;
+    } 
+
+    .submit-button {
+        margin-top: 20px;
+    }
+
+} 
+
+/* xl */ 
+/* @media (min-width: 1280px) {} */ 
+/* 2xl */ 
+/* @media (min-width: 1536px) {} 

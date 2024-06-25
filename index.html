@@ -20,28 +20,35 @@
 
       <h1>Contact Us</h1>
 
-      <form action="#">
+      <form action="/" id="form" name="myform" novalidate>
 
         <fieldset class="user-info">
-          <label for="first-name">First Name<span> *</span></label>
-          <input type="text" name="first-name" id="first-name" autocomplete="given-name" aria-describedby="first-name-error"  required>
-          <span class="error-message" id="first-name-error">This field is required</span>
-          <label for="last-name">Last Name<span> *</span></label>
-          <input type="text" name="last-name" id="last-name" autocomplete="family-name" aria-describedby="last-name-error" required>
-          <span class="error-message" id="last-name-error">This field is required</span>
+          <div class="names">
+            <div class="first-name">
+              <label for="first-name">First Name<span> *</span></label>
+              <input type="text" name="first-name" id="first-name" autocomplete="given-name" aria-describedby="first-name-error"  required>
+              <span class="error-message" id="first-name-error">This field is required</span>
+            </div>
+            <div class="last-name">
+              <label for="last-name">Last Name<span> *</span></label>
+              <input type="text" name="last-name" id="last-name" autocomplete="family-name" aria-describedby="last-name-error" required>
+              <span class="error-message" id="last-name-error">This field is required</span>
+            </div>
+          </div>
+          
           <label for="email">Email Address<span> *</span></label>
-          <input type="email" name="email" id="email" autocomplete="email" aria-invalid="true" aria-describedby="email-error" required>
-          <span class="error-message" id="email-error">Please enter a valid email address</span>
-          <span class="error-message" id="email-error">This field is required</span>
+          <input type="text" name="email" id="email" autocomplete="email" aria-invalid="true" aria-describedby="email-error" required>
+          <span class="error-message" id="invalid-email-error">Please enter a valid email address</span>
+          <span class="error-message" id="no-email-error">This field is required</span>
         </fieldset>
 
 
         <fieldset class="query-type">
           <legend>Query Type<span> *</span></legend>
           <div class="container">
-            <input type="radio" name="query-type" id="general-enquiry">
+            <input type="radio" name="query-type" id="general-enquiry" value="general-enquiry" required>
             <label for="general-enquiry">General Enquiry</label><br>
-            <input type="radio" name="query-type" id="support-request">
+            <input type="radio" name="query-type" id="support-request" value="support-request" required>
             <label for="support-request">Support Request</label>
           </div>
           <span class="error-message" id="query-error">Please select a query type</span>
@@ -62,14 +69,11 @@
           <span class="error-message" id="consent-error">To submit this form, please consent to being contacted</span>
         </fieldset>
         <button type="submit" class="submit-button">Submit</button>
+
       </form>
 
       
       <!-- 
-
-      This field is required
-
-      To submit this form, please consent to being contacted
 
       Message Sent!
       Thanks for completing the form. We'll be in touch soon! -->
