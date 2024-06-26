@@ -1,4 +1,5 @@
 const form = document.getElementById("form");
+const success = document.getElementById('success');
 
 // Error Messages
 const firstNameError = document.getElementById('first-name-error');
@@ -23,10 +24,13 @@ form.addEventListener('submit', (e) => {
 
 function validateInputs() {
 
+    let err = 0
+
     const firstName = document.getElementById('first-name');
     if (firstName.value === '' || firstName.value === null) {
         firstNameError.style.display = 'block';
         firstName.style.border = 'solid red 2px';
+        err += 1;
     } else {
         firstName.style.border = 'solid var(--clr-mediumgrey) 1px';
         firstNameError.style.display = 'none';
@@ -36,6 +40,7 @@ function validateInputs() {
     if (lastName.value === '' || lastName.value === null) {
         lastNameError.style.display = 'block';
         lastName.style.border = 'solid red 2px';
+        err += 1;
     } else {
         lastName.style.border = 'solid var(--clr-mediumgrey) 1px';
         lastNameError.style.display = 'none';
@@ -47,10 +52,12 @@ function validateInputs() {
         invalidEmailError.style.display = 'none';
         email.style.border = 'solid red 2px';
         noEmailError.style.display = 'block';
+        err += 1;
     } else if (!email.value.match(validEmail)) {
         noEmailError.style.display = 'none';
         email.style.border = 'solid red 2px';
         invalidEmailError.style.display = 'block';
+        err += 1;
     } else {
         noEmailError.style.display = 'none';
         invalidEmailError.style.display = 'none';
@@ -69,12 +76,14 @@ function validateInputs() {
         queryError.style.display = 'none'
     } else {
         queryError.style.display = 'block';
+        err += 1;
     }
 
     const message = document.getElementById('message');
     if (message.value === '' || message.value === null) {
         message.style.border = 'solid red 2px';
         messageError.style.display = 'block';
+        err += 1;
     } else {
         message.style.border = 'solid var(--clr-mediumgrey) 1px';
         messageError.style.display = 'none';
@@ -85,6 +94,15 @@ function validateInputs() {
         consentError.style.display = 'none';
     } else {
         consentError.style.display = 'block';
+        err += 1;
     }
 
+    if (err === 0) {
+        feedback();
+    }
 }
+
+function feedback() {
+    success.style.display = 'block';
+}
+

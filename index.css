@@ -196,6 +196,56 @@ textarea:focus {
     display: none;
 }
 
+.success {
+    display: none;
+    position: relative;
+    margin: 0;
+    border: none;
+    background-color: var(--clr-darkgrey);
+    color: var(--clr-white);
+    border-radius: 15px;
+    padding: 5px 20px;
+    flex-direction: column;
+}
+
+.success[open] {
+    animation: fade-in 500ms forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    100% {
+        opacity: 0;
+    } 0% {
+        opacity: 1;
+    }
+}
+
+.thicc  {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.success h1 {
+    color: var(--clr-white);
+    font-size: 1rem;
+}
+
+.success p {
+    font-size: 0.9rem;
+    font-weight: thin;
+    color: var(--clr-mediumgrey);
+    margin-top: 0;
+}
+
 
 footer { margin-top: 20px; }
 .attribution { font-size: 11px; text-align: center; }
@@ -265,6 +315,12 @@ footer { margin-top: 20px; }
 
     .submit-button {
         margin-top: 20px;
+    }
+
+    .thicc {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
 } 
